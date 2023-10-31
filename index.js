@@ -49,9 +49,8 @@ const generate = () => {
       const category = result["*"];
       console.log(category);
 
-      const listOfCategoryMembersUrl = `https://en.wikipedia.org/w/api.php?action=query&format=json&list=categorymembers&cmtitle=${
-        "Category:" + category
-      }&cmnamespace=0&cmlimit=500`;
+      const listOfCategoryMembersUrl = `https://en.wikipedia.org/w/api.php?action=query&format=json&list=categorymembers&cmtitle=${"Category:" + category
+        }&cmnamespace=0&cmlimit=500`;
       console.log(listOfCategoryMembersUrl);
 
       request(listOfCategoryMembersUrl, (err, resp, body) => {
@@ -118,7 +117,7 @@ const start = async ({ category, results }) => {
       service: "https://bsky.social",
     });
     await agent.login({
-      identifier: process.env.BLUESKY_USERNAME,
+      identifier: process.env.BLUESKY_HANDLE,
       password: process.env.BLUESKY_PASSWORD,
     });
 

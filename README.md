@@ -1,4 +1,4 @@
-# Helvetica bot
+# Helvetica bot [![Post to Bluesky](https://github.com/jacklorusso/helvetica-bot/actions/workflows/post.yml/badge.svg)](https://github.com/jacklorusso/helvetica-bot/actions/workflows/post.yml)
 
 Generating designs inspired by the [John & Paul & Ringo & George](https://www.experimentaljetset.nl/archive/john-paul-ringo-george) t-shirt from Experimental Jetset. Content is sourced from Wikipedia.
 
