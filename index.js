@@ -117,8 +117,8 @@ const start = async ({ category, results }) => {
       service: "https://bsky.social",
     });
     await agent.login({
-      identifier: process.env.BLUESKY_HANDLE,
-      password: process.env.BLUESKY_PASSWORD,
+      identifier: process.env.BSKY_HANDLE,
+      password: process.env.BSKY_PASSWORD,
     });
 
     const file = fs.readFileSync("out.png");
