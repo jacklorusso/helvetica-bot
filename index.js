@@ -5,6 +5,7 @@ import { createCanvas } from "canvas";
 import fs from "fs";
 import bsky from "@atproto/api";
 import * as dotenv from "dotenv";
+import { extraBannedWords } from "./extra-banned-words.js";
 
 dotenv.config();
 const { BskyAgent, RichText } = bsky;
@@ -111,6 +112,8 @@ const makeImage = (names, category, cb) => {
 };
 
 const start = async ({ category, results }) => {
+  wordfilter.addWords(extraBannedWords);
+
   if (!wordfilter.blacklisted(category)) {
     /* initialize BskyAgent and login  */
     const agent = new BskyAgent({
@@ -155,8 +158,10 @@ const start = async ({ category, results }) => {
       },
     });
   } else {
-    console.log("Word was not approved");
+    console.log(`Word was not approved: ${category}`);
   }
 };
 
-generate().then(({ category, results }) => start({ category, results }));
+generate().then(({ category, results }) =>
+  start({ category, results }),
+);
