@@ -50,15 +50,19 @@ const generate = () => {
       const category = result["*"];
       console.log(category);
 
-      const listOfCategoryMembersUrl = `https://en.wikipedia.org/w/api.php?action=query&format=json&list=categorymembers&cmtitle=${"Category:" + category
-        }&cmnamespace=0&cmlimit=500`;
+      const listOfCategoryMembersUrl = `https://en.wikipedia.org/w/api.php?action=query&format=json&list=categorymembers&cmtitle=${
+        "Category:" + category
+      }&cmnamespace=0&cmlimit=500`;
       console.log(listOfCategoryMembersUrl);
 
       request(listOfCategoryMembersUrl, (err, resp, body) => {
         let result = JSON.parse(body).query.categorymembers;
         result = result.map((el) => el.title.replace(/\s\(.*/, ""));
         let betterResult = result.filter(
-          (item) => item.length <= 32 && !item.includes("List") && !item.includes(category),
+          (item) =>
+            item.length <= 32 &&
+            !item.includes("List") &&
+            !item.includes(category),
         );
 
         let results = [];
@@ -162,6 +166,4 @@ const start = async ({ category, results }) => {
   }
 };
 
-generate().then(({ category, results }) =>
-  start({ category, results }),
-);
+generate().then(({ category, results }) => start({ category, results }));
