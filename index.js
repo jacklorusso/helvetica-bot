@@ -58,7 +58,7 @@ const generate = () => {
         let result = JSON.parse(body).query.categorymembers;
         result = result.map((el) => el.title.replace(/\s\(.*/, ""));
         let betterResult = result.filter(
-          (item) => item.length <= 32 && !item.includes("List"),
+          (item) => item.length <= 32 && !item.includes("List") && !item.includes(category),
         );
 
         let results = [];

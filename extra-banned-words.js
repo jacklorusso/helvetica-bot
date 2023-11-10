@@ -10,4 +10,6 @@ export const extraBannedWords = [
     "nazi",
     "reich",
     "reichsleiter",
+    "bombs",
+    "bomb"
 ];
