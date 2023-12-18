@@ -12,4 +12,13 @@ export const extraBannedWords = [
   "reichsleiter",
   "bombs",
   "bomb",
+"bombings",
+"attacks",
+"attack",
+"shooting",
+"shootings",
+"battle",
+"battles",
+"terrorist"
+"terrorists"
 ];
