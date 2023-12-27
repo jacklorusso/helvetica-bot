@@ -20,5 +20,7 @@ export const extraBannedWords = [
 "battle",
 "battles",
 "terrorist",
-"terrorists"
+"terrorists",
+"execution",
+"executions"
 ];
